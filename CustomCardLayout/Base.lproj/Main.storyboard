@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mdb-ay-5Dg">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Card Layout-->
+        <scene sceneID="x2I-S3-ObG">
+            <objects>
+                <tableViewController id="kaZ-f6-mR9" customClass="TableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="156" sectionHeaderHeight="28" sectionFooterHeight="28" id="FNh-dH-N74">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardViewTableCell" rowHeight="156" id="oBu-uL-LlL" customClass="CardViewTableCell">
+                                <rect key="frame" x="0.0" y="28" width="600" height="156"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.84999999999999998" contentMode="center" tableViewCell="oBu-uL-LlL" id="8Mv-Dh-vXy">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="156"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjU-aM-IQh" customClass="CardView">
+                                            <rect key="frame" x="8" y="8" width="584" height="140"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                    <size key="value" width="1" height="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                    <real key="value" value="0.40000000000000002"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                    <integer key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="dataSource" destination="oBu-uL-LlL" id="EjY-lj-0MI"/>
+                                                <outlet property="delegate" destination="oBu-uL-LlL" id="pNT-ui-VMz"/>
+                                            </connections>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vjU-aM-IQh" firstAttribute="top" secondItem="8Mv-Dh-vXy" secondAttribute="top" constant="8" id="8ds-yA-1bx"/>
+                                        <constraint firstItem="vjU-aM-IQh" firstAttribute="leading" secondItem="8Mv-Dh-vXy" secondAttribute="leading" constant="8" id="RnX-wS-6d9"/>
+                                        <constraint firstAttribute="trailing" secondItem="vjU-aM-IQh" secondAttribute="trailing" constant="8" id="YfP-06-GXR"/>
+                                        <constraint firstAttribute="bottom" secondItem="vjU-aM-IQh" secondAttribute="bottom" constant="8" id="mmG-Ik-73q"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cardView" destination="vjU-aM-IQh" id="rff-Ip-aG8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kaZ-f6-mR9" id="q9L-og-6k9"/>
+                            <outlet property="delegate" destination="kaZ-f6-mR9" id="BtW-9Y-6gV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Card Layout" id="IRU-BP-23d"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NOK-xh-Uii" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="624.79999999999995" y="112.89355322338831"/>
+        </scene>
+        <!--Data Source-->
+        <scene sceneID="dGz-iz-1oc">
+            <objects>
+                <viewController id="NuX-yl-f7Q" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kTw-c2-bFb"/>
+                        <viewControllerLayoutGuide type="bottom" id="aW7-ke-xq7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h36-be-FQR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgx-Hi-hpI" customClass="CardView">
+                                <rect key="frame" x="26" y="283.5" width="323" height="100"/>
+                                <color key="backgroundColor" red="0.7926572503" green="1" blue="0.79171264870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="NuX-yl-f7Q" id="u3u-0H-BdX"/>
+                                    <outlet property="delegate" destination="NuX-yl-f7Q" id="wY1-hh-K8G"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="wgx-Hi-hpI" secondAttribute="trailing" constant="10" id="I0g-Cv-HMd"/>
+                            <constraint firstItem="wgx-Hi-hpI" firstAttribute="leading" secondItem="h36-be-FQR" secondAttribute="leadingMargin" constant="10" id="kxX-f8-YhM"/>
+                            <constraint firstItem="wgx-Hi-hpI" firstAttribute="centerY" secondItem="h36-be-FQR" secondAttribute="centerY" id="sst-fb-yPC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="wgx-Hi-hpI"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="cardView" destination="wgx-Hi-hpI" id="cgh-RP-xnE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DzF-8Z-Ovp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380" y="112.89355322338831"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SRR-AK-NMy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mdb-ay-5Dg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" alpha="0.84999999999999998" contentMode="scaleToFill" barStyle="black" id="lT5-X5-ixq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.24960311739077889" blue="0.31163102624934735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kaZ-f6-mR9" kind="relationship" relationship="rootViewController" id="aao-l9-5bx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kdx-rK-DEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143.19999999999999" y="112.89355322338831"/>
+        </scene>
+    </scenes>
+</document>
